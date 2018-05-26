@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.chat.mapper.UserMapper">
+
+    <!-- 根据用户账号查找用户 -->
+    <select id="selectUserByUserid" parameterType="string" resultType="user">
+      SELECT * FROM `user` WHERE `user`.userid = '${userid}'
+    </select>
+
+    <!-- 更新用户 -->
+    <update id="update" parameterType="user">
+        UPDATE user
+        <set>
+            <if test="password != null and password != ''">
+                PASSWORD = '${password}',
+            </if>
+            <if test="nickname != null and nickname != ''">
+                NICKNAME = '${nickname}',
+            </if>
+            <if test="sex != null and sex != ''">
+                SEX = #{sex},
+            </if>
+            <if test="age != null and age != ''">
+                AGE = #{age},
+            </if>
+            <if test="profilehead != null and profilehead != ''">
+                PROFILEHEAD = '${profilehead}',
+            </if>
+            <if test="profile != null and profile != ''">
+                PROFILE = '${profile}',
+            </if>
+            <if test="firsttime != null and firsttime != ''">
+                FIRSTTIME =  '${firsttime}',
+            </if>
+            <if test="lasttime != null and lasttime != ''">
+                LASTTIME =  '${lasttime}',
+            </if>
+            <if test="status != null and status != ''">
+                STATUS = #{status},
+            </if>
+        </set>
+        WHERE USERID = '${userid}'
+    </update>
+
+</mapper>

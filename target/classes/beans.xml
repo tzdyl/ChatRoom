@@ -44,6 +44,8 @@
 	
 	<!-- service -->
 	<bean id="adminService" class="cn.chat.service.impl.AdminServiceImpl"></bean>
+	<bean id="userService" class="cn.chat.service.impl.UserServiceImpl"></bean>
+	<bean id="logService" class="cn.chat.service.impl.LogServiceImpl"></bean>
 
 
 	
