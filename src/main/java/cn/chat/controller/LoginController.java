@@ -59,7 +59,7 @@ public class LoginController {
                     existUser.setLasttime(date.getTime24());                        //更新最后登陆时间
                     userService.update(existUser);                                 //更新用户
                     model.addAttribute("message",defined.LOGIN_SUCCESS);
-                    return "chat";
+                    return "index";
                 }
             }
         }
