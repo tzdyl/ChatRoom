@@ -17,6 +17,7 @@
         <input type="password" id="password" name="password" placeholder="请输入密码">
         <input type="submit" id="submit" value="登录"><font color="red">${error}${message}</font>
     </form>
-
+    <br/>
+<a href="${pageContext.request.contextPath}/regist">注册</a>
 </body>
 </html>
