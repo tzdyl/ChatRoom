@@ -35,6 +35,21 @@ public class LoginController {
         return "login";
     }
 
+    //注册页面
+    @RequestMapping(value = "/regist")
+    public String regist(){
+
+        return "regist";
+    }
+    //添加用户
+    @RequestMapping(value = "/addUser")
+    public String addUser(User user,String userid, String password, Model model, HttpServletRequest request){
+        userService.regist(user);
+        model.addAttribute("msg", "注册成功");
+        return "login";
+    }
+
+
     //登录
     @RequestMapping(value = "/login")
     public String login(String userid, String password, Model model,HttpSession session,

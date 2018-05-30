@@ -3,6 +3,10 @@
 
 <mapper namespace="cn.chat.mapper.UserMapper">
 
+    <!--注册用户 -->
+    <insert id="addUser" parameterType="User">
+        insert into user(userid,password) values(#{userid},#{password})
+    </insert>
     <!-- 根据用户账号查找用户 -->
     <select id="selectUserByUserid" parameterType="string" resultType="user">
       SELECT * FROM `user` WHERE `user`.userid = '${userid}'

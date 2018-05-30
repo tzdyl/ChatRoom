@@ -12,4 +12,7 @@ public interface UserService {
 
     //更新用户信息
     boolean update(User existUser);
+
+    //用户注册
+    void regist(User user);
 }

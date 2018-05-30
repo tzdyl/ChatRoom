@@ -13,4 +13,7 @@ public interface UserMapper {
 
     //更新用户信息
     boolean update(User existUser);
+
+    //添加(注册)用户
+    public void addUser(User user);
 }

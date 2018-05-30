@@ -25,4 +25,10 @@ public class UserServiceImpl implements UserService {
     public boolean update(User existUser) {
         return userMapper.update(existUser);
     }
+
+    @Override
+    public void regist(User user) {
+        // TODO Auto-generated method stub
+        userMapper.addUser(user);
+    }
 }
