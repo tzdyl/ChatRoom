@@ -5,7 +5,7 @@
 
     <!--注册用户 -->
     <insert id="addUser" parameterType="User">
-        insert into user(userid,password) values(#{userid},#{password})
+        insert into user(userid,password,status) values(#{userid},#{password},1)
     </insert>
     <!-- 根据用户账号查找用户 -->
     <select id="selectUserByUserid" parameterType="string" resultType="user">
